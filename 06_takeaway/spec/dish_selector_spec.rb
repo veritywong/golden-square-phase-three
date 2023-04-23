@@ -5,6 +5,5 @@ RSpec.describe DishSelector do
         menu = double :dish_list, dish: "chips"
         choice = DishSelector.new(menu)
         expect(choice.select_dish("chips", 2)).to eq 2
-        
     end
 end

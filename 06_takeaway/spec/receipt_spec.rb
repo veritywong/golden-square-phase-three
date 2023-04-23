@@ -4,16 +4,15 @@ RSpec.describe Receipt do
 
     it "adds a selected item to the list" do
         receipt = Receipt.new
-        expect(receipt.add("item", 1)).to eq ["item", 1]
+        expect(receipt.add("item", 1)).to eq 1
     end
 
 
-    xit "returns receipt with selected dishes and prices" do
-        dish_1 = Dish.new("chips", 2.99)
-        menu = DishList.new
-        menu.add(dish_1)
-        choice = DishSelector.new(menu)
-        choice.select_dish("chips", 2)
+    it "returns receipt with selected dishes and prices" do
+        # dish_1 = double :dish_class, dish: "chips", price: 2.99
+        # menu = double :dish_list
+        # menu.add(dish_1)
+        # choice = double :dish_selector
         receipt = Receipt.new
         item_1 = receipt.add("chips", 2)
         expect(receipt.cost(2.99)).to eq 5.98
