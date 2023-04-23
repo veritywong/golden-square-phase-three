@@ -30,7 +30,7 @@ _Also design the interface of each class in more detail._
 ```ruby
 class Dish
 
-  initialize(dish, price)
+  def initialize(dish, price)
     @dish = dish # string
     @price = price #f loat
   end
@@ -46,7 +46,7 @@ class Dish
 end
 
 class DishList
-  def initalize
+  def initialize
     @menu = []
   end
 
@@ -64,8 +64,8 @@ class DishList
 
 end
 
-class SelectedDish
-  def initalize (menu) # menu is an instance of DishList
+class DishSelector
+  def initialize (menu) # menu is an instance of DishList
     @menu = menu
   end
 
@@ -152,11 +152,18 @@ _Create examples, where appropriate, of the behaviour of each relevant class at
 a more granular level of detail._
 
 ```ruby
-# EXAMPLE
+# 1
+# Dish
+dish = Dish.new("chips", 2.99)
+expect(dish.dish).to eq "chips"
+expect(dish.price).to eq 2.99
 
-# Constructs a track
-track = Track.new("Carte Blanche", "Veracocha")
-track.title # => "Carte Blanche"
+# 2
+# DishList
+it "creates an empty list"
+    menu = DishList.new
+    expect(menu.show_menu).to eq []
+end
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
